@@ -1,0 +1,5 @@
+package com.jbk.api.service;
+
+public interface ProductService {
+
+}

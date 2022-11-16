@@ -1,0 +1,13 @@
+package com.jbk.api.dao;
+
+import com.jbk.api.entity.Product;
+
+public class ProductDaoImpl implements ProductDao {
+
+	@Override
+	public boolean saveProduct(Product product) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

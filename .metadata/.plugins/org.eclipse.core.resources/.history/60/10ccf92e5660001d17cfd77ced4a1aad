@@ -1,0 +1,13 @@
+package com.jbk.api.service;
+
+import com.jbk.api.entity.Product;
+
+public class ProductServiceImpl implements ProductService {
+
+	@Override
+	public boolean saveProduct(Product product) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

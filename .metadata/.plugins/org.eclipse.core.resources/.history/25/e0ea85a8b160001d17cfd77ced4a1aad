@@ -1,0 +1,9 @@
+package com.jbk.api.service;
+
+import com.jbk.api.entity.Product;
+
+public interface ProductService {
+	
+	public boolean saveProduct(Product product);
+
+}

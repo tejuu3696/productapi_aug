@@ -1,0 +1,30 @@
+package com.jbk.dao;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import com.jbk.config.HibernateUtility;
+import com.jbk.entity.Product;
+
+public class ProductDao {
+	public boolean saveProduct(Product product) {
+		boolean isAdded=false;
+		Session session=sessionFactory.openSession();
+		
+			try {
+			
+			Transaction transaction=session.beginTransaction();
+			session.save(product);
+			transaction.commit();
+			isAdded=true;
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(session!=null) {
+				session.close();
+			}
+		}
+		return isAdded;
+	}
+}

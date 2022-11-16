@@ -1,0 +1,17 @@
+package com.jbk.api.service;
+
+import java.util.List;
+
+import com.jbk.api.entity.Product;
+
+public interface ProductService {
+	
+	public boolean saveProduct(Product product);
+	public List<Product> getAllProducts();
+	public boolean UpdateProduct(Product product);
+	public Product getProductById(int productId);
+	public boolean deleteProduct(int productId);
+	
+	
+
+}

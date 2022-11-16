@@ -1,0 +1,9 @@
+package com.jbk.api.dao;
+
+import com.jbk.api.entity.Product;
+
+public interface ProductDao {
+	
+	public boolean saveProduct(Product product);
+
+}

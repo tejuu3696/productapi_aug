@@ -1,0 +1,5 @@
+package com.jbk.api.controller;
+
+public class ProductController {
+
+}

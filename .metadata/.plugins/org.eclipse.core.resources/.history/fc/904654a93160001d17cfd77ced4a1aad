@@ -1,0 +1,5 @@
+package com.jbk.api.entity;
+
+public class Product {
+
+}

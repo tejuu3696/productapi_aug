@@ -1,0 +1,36 @@
+package com.jbk.api.dao;
+
+import java.util.List;
+
+import com.jbk.api.entity.Product;
+
+public interface ProductDao {
+	
+	public boolean saveProduct(Product product);
+
+	public Product getProductById(int productId);
+
+	public List<Product> getAllProducts();
+
+	public boolean UpdateProduct(Product product);
+
+	public boolean deleteProduct(int productid);
+
+	public List<Product> getMaxPriceProducts();
+	
+	public double countSumOfProductPrice();
+	
+	public long getTotalCountOfProducts();
+
+	public List<Product> sortProductById_ASC();
+
+	public List<Product> sortProductByName_DESC();
+	
+
+	
+
+
+
+
+
+}

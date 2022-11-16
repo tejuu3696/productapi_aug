@@ -1,0 +1,25 @@
+package com.jbk.api.dao;
+
+import java.util.List;
+
+import com.jbk.api.entity.Product;
+
+public interface ProductDao {
+	
+	public boolean saveProduct(Product product);
+
+	public Product getProductById(int productId);
+
+	public List<Product> getAllProducts();
+
+	public boolean UpdateProduct(Product product);
+
+	public boolean deleteProduct(int productId);
+
+	
+
+
+
+
+
+}

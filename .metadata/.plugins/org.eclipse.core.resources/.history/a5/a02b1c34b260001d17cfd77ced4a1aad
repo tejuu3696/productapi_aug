@@ -1,0 +1,18 @@
+package com.jbk.api.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.jbk.api.dao.ProductDao;
+import com.jbk.api.entity.Product;
+@Service
+public class ProductServiceImpl implements ProductService {
+@Autowired
+private ProductDao dao;
+	@Override
+	public boolean saveProduct(Product product) {
+	boolean isAdded=dao.saveProduct(product);
+		return isAdded;
+	}
+
+}

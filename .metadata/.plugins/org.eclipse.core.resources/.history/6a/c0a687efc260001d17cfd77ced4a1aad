@@ -1,0 +1,72 @@
+package com.jbk.api.dao;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.jbk.api.entity.Product;
+@Repository
+public class ProductDaoImpl implements ProductDao {
+	@Autowired
+	SessionFactory sessionFactory;
+	@Override
+	public boolean saveProduct(Product product) {
+	
+		
+		boolean isAdded = false;
+		Session session = sessionFactory.openSession();
+
+		try {
+         Product prd=session.get(Product.class, product.getProductId());
+         if(prd==null) {
+			Transaction transaction = session.beginTransaction();
+			session.save(product);
+			transaction.commit();
+			isAdded = true;
+         }
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (session != null) {
+				session.close();
+			}
+		}
+		return isAdded;
+	}
+	@Override
+	public Product getProductById(int productId) {
+		Session session = sessionFactory.openSession();
+		Product product = null;
+		try {
+			product = session.get(Product.class, productId);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (session != null) {
+				session.close();
+			}
+		}
+		
+		return product;
+	}
+	@Override
+	public List<Product> getAllProducts() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public boolean UpdateProduct(Product product) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	@Override
+	public boolean deleteProductById() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}
